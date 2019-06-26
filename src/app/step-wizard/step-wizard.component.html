@@ -1,0 +1,52 @@
+
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form name = 'form1' [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Step 1</ng-template>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+              <mat-form-field appearance="outline">
+                  <mat-label>Name</mat-label>
+                <input matInput placeholder="name" formControlName="name" required>
+                </mat-form-field>
+                
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <mat-form-field appearance="outline">
+                    <mat-label>Address</mat-label>
+                  <input matInput placeholder="Address" formControlName="address" required>
+                  </mat-form-field>
+                  
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12 text-center">
+                  <mat-form-field appearance="outline">
+                      <mat-label>mobile no.</mat-label>
+                    <input matInput placeholder="Mobile No" formControlName="mobileNo" required>
+                    </mat-form-field>
+                    
+              </div>
+            </div>
+      </div>
+     
+     
+      <div id = 'myButton'>
+        <button class = 'btn btn-primary btnWidth' [disabled] = 'firstFormGroup.invalid'  matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+      <ng-template matStepLabel>Step 2</ng-template>
+   
+     <h1>This is step 2 </h1>
+      <div id = 'myButton'>
+        <button class = 'btn btn-primary width50' matStepperPrevious>Back</button>
+        <button class = 'btn btn-primary width50'  matStepperNext>Next</button>
+      </div>
+  </mat-step>
+ 
+</mat-horizontal-stepper>
